@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+ 	<head>
+  	<title> HUNGRY </title> 
+  	<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"> </script>  
+  	<script>  
+   	function start(){
+   	sjs.open("target",900,700);
+    var background = new sjs.Image("https://static-cdn.jtvnw.net/jtv_user_pictures/e91a3dcf-c15a-441a-b369-996922364cdc-profile_image-300x300.png");
+    background.setSize(sjs.getWidth(900), sjs.getHeight(700));
+    var Pacman = new sjs.Image("https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Pacman.svg/542px-Pacman.svg.png");
+	Pacman.type = "player";
+	Pacman.setSize(100, 100);
+
+	//Player Properties
+	sjs.keyDown(RIGHT_KEY, function(){ 
+	Pacman.pushRight(0);
+	player.setImage("Images/fish_right.png");
+	});
+	sjs.keyDown(LEFT_KEY, function(){ 
+	Pacman.pushLeft(0);
+	});
+	sjs.keyDown(DOWN_KEY, function(){ 
+	Pacman.pushDown(0);
+	});
+	sjs.keyDown(UP_KEY, function(){ 
+	Pacman.pushUp(0);
+	});
+
+	//crumbs
+	var crumbs = new sjs.Image("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC")
+	crumbs.setSize(15, 15);;
+	var x = Math.floor(Math.random() * 451);
+	var y = Math.floor(Math.random() * 751); 
+	crumbs.moveTo(x, y); 
+	setInterval(function(){ 
+	}, 5000);
+	crumbs.type = "crumbs";
+	sjs.onHit("player","crumbs",function(x,y){
+	x.grow(60,60);
+	setTimeout(function(){
+	x.grow(-60,-60);
+	}, 4000);
+	y.destroy();
+	});
+
+	//enemy
+	
+	
+
+		
+
+
+	
+
+   	}
+  	</script>  
+ 	</head>  
+	 <body onload="start()">
+   	<div id="target" style="margin:auto;background:black;"></div>
+ 	</body>
+</html>
+
+

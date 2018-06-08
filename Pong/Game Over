@@ -1,0 +1,25 @@
+<gameover html>
+	<html>
+	<head>
+	<title> Game Over </title>
+	<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script>
+	<script>
+	function start(){
+	sjs.open();
+	var gameovr = new sjs.Text("GAME OVER",60,"red")
+	menu_text.centerH().offset(0,70)
+	 
+	var reButton = new sjs.Button("Retry?", function(){
+	window.location = "pong.html";
+	});
+	reButton.centerH().offset(0,210)
+	
+	} //end start
+	</script>
+	</head>
+	<body onload="start()">
+	<h1> Game Over! </h1>
+
+	<div id="target" style="margin:auto;background:grey;"></div>
+	</body>
+</html>

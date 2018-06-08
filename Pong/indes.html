@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+	<title> PONG </title>
+	<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script>
+	<script>
+	function start(){
+	sjs.open();
+	var menu_text = new sjs.Text("P O N G",58,"blue")
+	menu_text.centerH().offset(0,80)
+	 
+	var startButton = new sjs.Button("Start", function(){
+	window.location = "pong.html";
+	});
+	startButton.centerH().offset(0,210)
+	var info_text = new sjs.Text("Created By Daniel Doria",18,"green");
+
+	info_text.bottom().centerH().offset(0,-20)
+
+
+	} //end start
+	</script>
+	</head>
+	<body onload="start()">
+	<h1> Menu </h1>
+
+	<div id="target" style="margin:auto;background:black;"></div>
+	</body>
+</html>
